@@ -1,0 +1,29 @@
+class Obj3 extends java.lang.Object
+{
+    Obj2 objectOfObj2;
+
+    void <init>()
+    {
+        Obj3 this;
+
+        this := @this: Obj3;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void funObj3()
+    {
+        Obj3 this;
+        Obj2 $r0;
+
+        this := @this: Obj3;
+
+        $r0 = this.<Obj3: Obj2 objectOfObj2>;
+
+        virtualinvoke $r0.<Obj2: void funObj2()>();
+
+        return;
+    }
+}

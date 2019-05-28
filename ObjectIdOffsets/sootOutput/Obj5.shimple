@@ -1,0 +1,41 @@
+class Obj5 extends java.lang.Object
+{
+    Obj4 objectOfObj4;
+
+    void <init>()
+    {
+        Obj5 this;
+
+        this := @this: Obj5;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void funObj5()
+    {
+        Obj5 this;
+        Obj4 $r0;
+
+        this := @this: Obj5;
+
+        $r0 = this.<Obj5: Obj4 objectOfObj4>;
+
+        virtualinvoke $r0.<Obj4: void funObj4()>();
+
+        return;
+    }
+
+    public Obj4 funReturnObj4()
+    {
+        Obj5 this;
+        Obj4 $r0;
+
+        this := @this: Obj5;
+
+        $r0 = this.<Obj5: Obj4 objectOfObj4>;
+
+        return $r0;
+    }
+}

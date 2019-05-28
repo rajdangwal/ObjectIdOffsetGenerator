@@ -1,0 +1,123 @@
+public class Test extends java.lang.Object
+{
+    public Obj o1;
+    public Obj2 o2;
+
+    public void <init>()
+    {
+        Test this;
+
+        this := @this: Test;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void funTest(Obj, Obj2)
+    {
+        Test this;
+        Obj oTemp1, ofun1, ofun2, $r0, $r0_1;
+        Obj2 oTemp2, $r1;
+
+        this := @this: Test;
+
+        oTemp1 := @parameter0: Obj;
+
+        oTemp2 := @parameter1: Obj2;
+
+        this.<Test: Obj o1> = oTemp1;
+
+        this.<Test: Obj2 o2> = oTemp2;
+
+        $r0 = this.<Test: Obj o1>;
+
+        virtualinvoke $r0.<Obj: void funObj()>();
+
+        $r1 = this.<Test: Obj2 o2>;
+
+        virtualinvoke $r1.<Obj2: void funObj2()>();
+
+        $r0_1 = new Obj;
+
+        specialinvoke $r0_1.<Obj: void <init>(int)>(5);
+
+        ofun1 = $r0_1;
+
+        virtualinvoke ofun1.<Obj: void funObj()>();
+
+        ofun2 = ofun1;
+
+        virtualinvoke ofun2.<Obj: void funObj()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        Obj oTemp1, $r0;
+        Obj2 oTemp2, $r1, $r5;
+        Obj3 oTemp3, $r2, $r2_1;
+        Obj4 oTemp4, $r3, $r3_1;
+        Obj5 oTemp5, oTemp6, $r4, $r4_1;
+
+        args := @parameter0: java.lang.String[];
+
+        $r0 = new Obj;
+
+        specialinvoke $r0.<Obj: void <init>(int)>(10);
+
+        oTemp1 = $r0;
+
+        $r1 = new Obj2;
+
+        specialinvoke $r1.<Obj2: void <init>()>();
+
+        oTemp2 = $r1;
+
+        virtualinvoke oTemp2.<Obj2: int funObj2ReturnInt(int,int)>(5, 5);
+
+        $r2 = new Obj3;
+
+        specialinvoke $r2.<Obj3: void <init>()>();
+
+        oTemp3 = $r2;
+
+        oTemp3.<Obj3: Obj2 objectOfObj2> = oTemp2;
+
+        $r3 = new Obj4;
+
+        specialinvoke $r3.<Obj4: void <init>()>();
+
+        oTemp4 = $r3;
+
+        oTemp4.<Obj4: Obj3 objectOfObj3> = oTemp3;
+
+        $r4 = new Obj5;
+
+        specialinvoke $r4.<Obj5: void <init>()>();
+
+        oTemp5 = $r4;
+
+        oTemp5.<Obj5: Obj4 objectOfObj4> = oTemp4;
+
+        $r4_1 = new Obj5;
+
+        specialinvoke $r4_1.<Obj5: void <init>()>();
+
+        oTemp6 = $r4_1;
+
+        oTemp6.<Obj5: Obj4 objectOfObj4> = oTemp4;
+
+        $r3_1 = oTemp5.<Obj5: Obj4 objectOfObj4>;
+
+        $r2_1 = $r3_1.<Obj4: Obj3 objectOfObj3>;
+
+        $r5 = staticinvoke <Obj3: Obj2 funReturnStaticObj2()>();
+
+        $r2_1.<Obj3: Obj2 objectOfObj2> = $r5;
+
+        return;
+    }
+}

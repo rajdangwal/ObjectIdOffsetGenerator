@@ -1,0 +1,29 @@
+Finding the offsets to insert events for Object_Id generation.
+
+
+Output format
+-------------
+
+ClassName1
+MethodName1: OffsetNo1 OffsetNo2 ...
+MethodName2: ...
+
+ClassName2
+...
+
+--------------------------------------------------------
+
+
+
+How to run from terminal?
+Put the program dir to be analyzed in the src directory.
+Make appropriate changes in the testOrig.sh
+Run testOrig.sh
+
+
+How to run in eclipse
+---------------------
+
+Add soot-trunk.jar to build path
+Since eclipse searches for class files in bin directory, create all the class files in bin directory with the help of test.sh script.
+In the arguments of SootMain in eclipse give the class name "Test" to be analyzed.

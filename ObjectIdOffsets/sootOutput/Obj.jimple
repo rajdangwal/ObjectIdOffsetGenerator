@@ -1,0 +1,33 @@
+class Obj extends java.lang.Object
+{
+    int i;
+
+    void <init>()
+    {
+        Obj this;
+
+        this := @this: Obj;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<Obj: int i> = 0;
+
+        return;
+    }
+
+    public void funObj()
+    {
+        Obj this;
+        java.io.PrintStream $r0;
+
+        this := @this: Obj;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Hello");
+
+        this.<Obj: int i> = 5;
+
+        return;
+    }
+}

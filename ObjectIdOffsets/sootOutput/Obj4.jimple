@@ -1,0 +1,29 @@
+class Obj4 extends java.lang.Object
+{
+    Obj3 objectOfObj3;
+
+    void <init>()
+    {
+        Obj4 this;
+
+        this := @this: Obj4;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void funObj4()
+    {
+        Obj4 this;
+        Obj3 $r0;
+
+        this := @this: Obj4;
+
+        $r0 = this.<Obj4: Obj3 objectOfObj3>;
+
+        virtualinvoke $r0.<Obj3: void funObj3()>();
+
+        return;
+    }
+}

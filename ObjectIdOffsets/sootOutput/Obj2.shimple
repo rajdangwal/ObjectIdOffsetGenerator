@@ -1,0 +1,57 @@
+class Obj2 extends java.lang.Object
+{
+    int j;
+
+    void <init>()
+    {
+        Obj2 this;
+
+        this := @this: Obj2;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<Obj2: int j> = 0;
+
+        return;
+    }
+
+    public void funObj2()
+    {
+        Obj2 this;
+        int $i0, $i0_1;
+
+        this := @this: Obj2;
+
+        $i0 = this.<Obj2: int j>;
+
+        $i0_1 = $i0 - 1;
+
+        this.<Obj2: int j> = $i0_1;
+
+        return;
+    }
+
+    public int funObj2ReturnInt(int, int)
+    {
+        Obj2 this;
+        int a, b, $i0, $i1, $i0_1, $i0_2;
+
+        this := @this: Obj2;
+
+        a := @parameter0: int;
+
+        b := @parameter1: int;
+
+        $i0 = this.<Obj2: int j>;
+
+        $i0_1 = $i0 + a;
+
+        $i0_2 = $i0_1 + b;
+
+        this.<Obj2: int j> = $i0_2;
+
+        $i1 = this.<Obj2: int j>;
+
+        return $i1;
+    }
+}
