@@ -1,0 +1,35 @@
+class A extends java.lang.Object
+{
+    int x;
+    B objB;
+
+    void <init>()
+    {
+        A this;
+
+        this := @this: A;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<A: int x> = 5;
+
+        return;
+    }
+
+    public void funA()
+    {
+        A this;
+        java.io.PrintStream $r0;
+        int $i0;
+
+        this := @this: A;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        $i0 = this.<A: int x>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>($i0);
+
+        return;
+    }
+}

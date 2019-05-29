@@ -41,11 +41,19 @@ public class Test
 		Obj5 oTemp5 = new Obj5();
 		oTemp5.objectOfObj4 = oTemp4;
 
-		Obj5 oTemp6 = new Obj5();
-		oTemp6.objectOfObj4 = oTemp4;
+//		Obj5 oTemp6 = new Obj5();
+//		oTemp6.objectOfObj4 = oTemp4;
+//
+//		oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = Obj3.funReturnStaticObj2();
 
-		oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = Obj3.funReturnStaticObj2();
-
+		Obj6 oTemp6 = new Obj6();
+		 Obj6 oTemp7;
+		//oTemp6 = (Obj6) oTemp5;
+		
+		oTemp7 = oTemp6 = (Obj6) oTemp5;
+		oTemp6.funObj6();
+		oTemp6.funObj5();
+		
 		// oTemp5.objectOfObj4 = oTemp6.objectOfObj4;
 		// oTemp5.objectOfObj4.objectOfObj3 = oTemp3;
 		// oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = new Obj2();
@@ -204,5 +212,13 @@ class Obj5
 	public Obj4 funReturnObj4()
 	{
 		return this.objectOfObj4;
+	}
+}
+
+class Obj6 extends Obj5
+{
+	public void funObj6()
+	{
+		System.out.println("Function in Obj6");
 	}
 }

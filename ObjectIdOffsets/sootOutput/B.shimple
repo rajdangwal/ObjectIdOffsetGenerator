@@ -1,0 +1,54 @@
+class B extends java.lang.Object
+{
+    int y;
+
+    void <init>()
+    {
+        B this;
+
+        this := @this: B;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<B: int y> = 10;
+
+        return;
+    }
+
+    public void funB()
+    {
+        B this;
+        java.io.PrintStream $r0;
+        int $i0;
+
+        this := @this: B;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        $i0 = this.<B: int y>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(int)>($i0);
+
+        return;
+    }
+
+    public int funB2(int, int)
+    {
+        B this;
+        int a, b, $i0, $i0_1, $i0_2;
+
+        this := @this: B;
+
+        a := @parameter0: int;
+
+        b := @parameter1: int;
+
+        $i0 = this.<B: int y>;
+
+        $i0_1 = $i0 + a;
+
+        $i0_2 = $i0_1 + b;
+
+        return $i0_2;
+    }
+}

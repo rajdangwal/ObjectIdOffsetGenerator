@@ -1,0 +1,138 @@
+public class AnotherClass extends java.lang.Object
+{
+    static int a;
+
+    public void <init>()
+    {
+        AnotherClass this;
+
+        this := @this: AnotherClass;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        <AnotherClass: int a> = 10;
+
+        return;
+    }
+
+    public void fun1()
+    {
+        AnotherClass this;
+        byte a, b;
+        java.io.PrintStream $r0, $r0_1;
+        java.lang.StringBuilder $r1, $r1_1, $r1_2;
+        java.lang.String $r2;
+
+        this := @this: AnotherClass;
+
+        a = 10;
+
+        b = 20;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("a + b = ");
+
+        $r1_1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(a);
+
+        $r1_2 = virtualinvoke $r1_1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>(b);
+
+        $r2 = virtualinvoke $r1_2.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>($r2);
+
+        if a <= 50 goto label1;
+
+        virtualinvoke this.<AnotherClass: void fun1()>();
+
+        goto label2;
+
+     label1:
+        return;
+
+     label2:
+        $r0_1 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r0_1.<java.io.PrintStream: void println(java.lang.String)>("First");
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        AnotherClass aObj, $r3;
+        A obj1, obj2, $r4;
+        B obj1B, $r5, $r5_1;
+        java.io.PrintStream $r0, $r0_1;
+        java.lang.StringBuilder $r1, $r1_1, $r1_2, $r1_3;
+        int $i0, $i0_1;
+        java.lang.String $r2, $r2_1;
+
+        args := @parameter0: java.lang.String[];
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        $r1 = new java.lang.StringBuilder;
+
+        specialinvoke $r1.<java.lang.StringBuilder: void <init>(java.lang.String)>("a = ");
+
+        $i0 = <AnotherClass: int a>;
+
+        $r1_1 = virtualinvoke $r1.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0);
+
+        $r2 = virtualinvoke $r1_1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>($r2);
+
+        $r3 = new AnotherClass;
+
+        specialinvoke $r3.<AnotherClass: void <init>()>();
+
+        aObj = $r3;
+
+        virtualinvoke aObj.<AnotherClass: void fun1()>();
+
+        $r0_1 = <java.lang.System: java.io.PrintStream out>;
+
+        $r1_2 = new java.lang.StringBuilder;
+
+        specialinvoke $r1_2.<java.lang.StringBuilder: void <init>(java.lang.String)>("a = ");
+
+        $i0_1 = <AnotherClass: int a>;
+
+        $r1_3 = virtualinvoke $r1_2.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0_1);
+
+        $r2_1 = virtualinvoke $r1_3.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r0_1.<java.io.PrintStream: void println(java.lang.String)>($r2_1);
+
+        $r4 = new A;
+
+        specialinvoke $r4.<A: void <init>()>();
+
+        obj1 = $r4;
+
+        virtualinvoke obj1.<A: void funA()>();
+
+        $r5 = new B;
+
+        specialinvoke $r5.<B: void <init>()>();
+
+        obj1B = $r5;
+
+        obj1.<A: B objB> = obj1B;
+
+        obj2 = obj1;
+
+        virtualinvoke obj2.<A: void funA()>();
+
+        $r5_1 = obj2.<A: B objB>;
+
+        virtualinvoke $r5_1.<B: void funB()>();
+
+        return;
+    }
+}
