@@ -47,12 +47,26 @@ public class Test
 //		oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = Obj3.funReturnStaticObj2();
 
 		Obj6 oTemp6 = new Obj6();
-		 Obj6 oTemp7;
-		//oTemp6 = (Obj6) oTemp5;
+		oTemp6 = (Obj6) oTemp5;
 		
-		oTemp7 = oTemp6 = (Obj6) oTemp5;
-		oTemp6.funObj6();
-		oTemp6.funObj5();
+		
+		try
+		{
+			oTemp6 = new Obj6();
+			oTemp6.funObj6();
+			oTemp6 = new Obj6();
+			oTemp6.funObj5();
+		}
+		catch(Exception e)
+		{
+			e.printStackTrace();
+		}
+		
+		Obj4 oTemp7 = oTemp6.funReturnObj4();
+		
+		
+//		Not considering chain assignments
+//		oTemp5.objectOfObj4.objectOfObj3 = oTemp4.objectOfObj3 = oTemp3;
 		
 		// oTemp5.objectOfObj4 = oTemp6.objectOfObj4;
 		// oTemp5.objectOfObj4.objectOfObj3 = oTemp3;

@@ -1,0 +1,28 @@
+class Obj6 extends Obj5
+{
+
+    void <init>()
+    {
+        Obj6 this;
+
+        this := @this: Obj6;
+
+        specialinvoke this.<Obj5: void <init>()>();
+
+        return;
+    }
+
+    public void funObj6()
+    {
+        Obj6 this;
+        java.io.PrintStream $r0;
+
+        this := @this: Obj6;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Function in Obj6");
+
+        return;
+    }
+}

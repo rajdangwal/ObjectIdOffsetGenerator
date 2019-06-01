@@ -57,10 +57,13 @@ public class Test extends java.lang.Object
     {
         java.lang.String[] args;
         Obj oTemp1, $r0;
-        Obj2 oTemp2, $r1, $r5;
-        Obj3 oTemp3, $r2, $r2_1;
-        Obj4 oTemp4, $r3, $r3_1;
-        Obj5 oTemp5, oTemp6, $r4, $r4_1;
+        Obj2 oTemp2, $r1;
+        int x;
+        Obj3 oTemp3, $r2;
+        Obj4 oTemp4, oTemp7, $r3;
+        Obj5 oTemp5, $r4;
+        java.lang.Exception e, $r6;
+        Obj6 $r5, oTemp6, oTemp6_1, $r5_1, oTemp6_2, $r5_2, oTemp6_3, $r5_3, oTemp6_4, $r5_4, oTemp6_5;
 
         args := @parameter0: java.lang.String[];
 
@@ -76,7 +79,7 @@ public class Test extends java.lang.Object
 
         oTemp2 = $r1;
 
-        virtualinvoke oTemp2.<Obj2: int funObj2ReturnInt(int,int)>(5, 5);
+        x = virtualinvoke oTemp2.<Obj2: int funObj2ReturnInt(int,int)>(5, 5);
 
         $r2 = new Obj3;
 
@@ -102,22 +105,54 @@ public class Test extends java.lang.Object
 
         oTemp5.<Obj5: Obj4 objectOfObj4> = oTemp4;
 
-        $r4_1 = new Obj5;
+        $r5 = new Obj6;
 
-        specialinvoke $r4_1.<Obj5: void <init>()>();
+        specialinvoke $r5.<Obj6: void <init>()>();
 
-        oTemp6 = $r4_1;
+        oTemp6 = $r5;
 
-        oTemp6.<Obj5: Obj4 objectOfObj4> = oTemp4;
+        oTemp6_1 = (Obj6) oTemp5;
 
-        $r3_1 = oTemp5.<Obj5: Obj4 objectOfObj4>;
+     label1:
+(0)     $r5_1 = new Obj6;
 
-        $r2_1 = $r3_1.<Obj4: Obj3 objectOfObj3>;
+        specialinvoke $r5_1.<Obj6: void <init>()>();
 
-        $r5 = staticinvoke <Obj3: Obj2 funReturnStaticObj2()>();
+(1)     oTemp6_2 = $r5_1;
 
-        $r2_1.<Obj3: Obj2 objectOfObj2> = $r5;
+        virtualinvoke oTemp6_2.<Obj6: void funObj6()>();
+
+(2)     $r5_2 = new Obj6;
+
+        specialinvoke $r5_2.<Obj6: void <init>()>();
+
+(3)     oTemp6_3 = $r5_2;
+
+        virtualinvoke oTemp6_3.<Obj6: void funObj5()>();
+
+     label2:
+(4)     goto label4;
+
+     label3:
+        $r6 := @caughtexception;
+
+        $r5_3 = Phi($r5_1 #0, $r5_2 #2);
+
+        oTemp6_4 = Phi(oTemp6_1 #0, oTemp6_2 #1, oTemp6_3 #3);
+
+        e = $r6;
+
+(5)     virtualinvoke e.<java.lang.Exception: void printStackTrace()>();
+
+     label4:
+        $r5_4 = Phi($r5_2 #4, $r5_3 #5);
+
+        oTemp6_5 = Phi(oTemp6_3 #4, oTemp6_4 #5);
+
+        oTemp7 = virtualinvoke oTemp6_5.<Obj6: Obj4 funReturnObj4()>();
 
         return;
+
+        catch java.lang.Exception from label1 to label2 with label3;
     }
 }
