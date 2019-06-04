@@ -4,24 +4,11 @@ import java.io.PrintStream;
 import java.io.File;
 
 import soot.*;
-import soot.JastAddJ.ReferenceType;
-import soot.baf.VirtualInvokeInst;
-import soot.jimple.AnyNewExpr;
-import soot.jimple.ConcreteRef;
-import soot.jimple.FieldRef;
-import soot.jimple.Ref;
-import soot.jimple.RetStmt;
-import soot.jimple.SpecialInvokeExpr;
+
 import soot.jimple.Stmt;
-import soot.jimple.VirtualInvokeExpr;
 import soot.jimple.internal.JArrayRef;
 import soot.jimple.internal.JAssignStmt;
-import soot.jimple.internal.JIdentityStmt;
 import soot.jimple.internal.JInstanceFieldRef;
-import soot.jimple.internal.JInvokeStmt;
-import soot.jimple.internal.JNewArrayExpr;
-import soot.jimple.internal.JNewExpr;
-import soot.jimple.internal.JReturnStmt;
 import soot.jimple.internal.JimpleLocal;
 import soot.shimple.internal.SPhiExpr;
 import soot.tagkit.BytecodeOffsetTag;
@@ -69,65 +56,54 @@ public class AnalysisTransformer extends SceneTransformer {
 				Stmt s = (Stmt) u;
 
 //System.out.println("Stmt : " + s);
-				if (printShimpleOnly)
-					{
+				if (printShimpleOnly) {
 					System.out.println(s + " Type : " + s.getClass());
-					if(s instanceof JAssignStmt)
-					{
-						Value vleft = ((JAssignStmt)s).getLeftOp();
-						Value vright = ((JAssignStmt)s).getRightOp();
+					if (s instanceof JAssignStmt) {
+						Value vleft = ((JAssignStmt) s).getLeftOp();
+						Value vright = ((JAssignStmt) s).getRightOp();
 						System.out.println("Statement : " + s);
-						System.out.println("Class of vleft: " +vleft.getClass());
-						System.out.println("Type of vleft: " +vleft.getType());
-						System.out.println("Class of vright: " +vright.getClass());
-						System.out.println("Type of vright: " +vright.getType());
+						System.out.println("Class of vleft: " + vleft.getClass());
+						System.out.println("Type of vleft: " + vleft.getType());
+						System.out.println("Class of vright: " + vright.getClass());
+						System.out.println("Type of vright: " + vright.getType());
 						BytecodeOffsetTag BOT = (BytecodeOffsetTag) u.getTag("BytecodeOffsetTag");
-						//System.out.println("Offset : " + BOT.toString());
+						// System.out.println("Offset : " + BOT.toString());
 					}
-					}
-				
-				else
-				{
+				}
+
+				else {
 					if (s instanceof JAssignStmt) {
 						BytecodeOffsetTag BOT = (BytecodeOffsetTag) u.getTag("BytecodeOffsetTag");
-						// System.out.println("Initial Offset : " + BOT.toString());
 						Value vR = ((JAssignStmt) s).getRightOp();
 						Value vL = ((JAssignStmt) s).getLeftOp();
 						Type tR = vR.getType();
-						
-						if(vL instanceof JInstanceFieldRef)
-						{
-							if(tR instanceof ArrayType || (tR instanceof RefType && !((RefType)tR).getSootClass().isJavaLibraryClass()))
-							{
-								//System.out.println(s);
-								System.out.println("JInstanceFieldRef Identified : "+ BOT.toString());
+
+						if (vL instanceof JInstanceFieldRef) {
+							if (tR instanceof ArrayType
+									|| (tR instanceof RefType && !((RefType) tR).getSootClass().isJavaLibraryClass())) {
+								//System.out.println("JInstanceFieldRef Identified : " + BOT.toString());
+								System.out.println("-"+BOT.toString());
 							}
 						}
-						
-						else if(vL instanceof JArrayRef)
-						{
-							if(tR instanceof RefType || tR instanceof ArrayType)
-							{
-								//System.out.println(s);
-								System.out.println("JArrayRef Identified : "+ BOT.toString());
+
+						else if (vL instanceof JArrayRef) {
+							if (tR instanceof RefType || tR instanceof ArrayType) {
+								//System.out.println("JArrayRef Identified : " + BOT.toString());
+								System.out.println("-"+BOT.toString());
 							}
 						}
-						
-						else if(vL instanceof JimpleLocal)
-						{
-							//System.out.println("Name : "+((JimpleLocal)vL).getName() + " Class : " + ((JimpleLocal)vL).getClass());
-							if(!vL.toString().startsWith("$r") && !(vR instanceof SPhiExpr))
-							{
-								if(tR instanceof ArrayType || (tR instanceof RefType && !((RefType)tR).getSootClass().isJavaLibraryClass()))
-								{
-									//still we have lhs of $r
-									//System.out.println(s);
-									System.out.println("Non-Java Lib. Ref. Type or Array Type JimpleLocal Identified : "+ BOT.toString());
+
+						else if (vL instanceof JimpleLocal) {
+							if (!vL.toString().startsWith("$r") && !(vR instanceof SPhiExpr)) {
+								if (tR instanceof ArrayType || (tR instanceof RefType
+										&& !((RefType) tR).getSootClass().isJavaLibraryClass())) {
+									//System.out.println("Non-Java Lib. Ref. Type or Array Type JimpleLocal Identified : "
+									//		+ BOT.toString());
+									System.out.println("-"+BOT.toString());
 								}
 							}
 						}
-						
-						
+
 					}
 				}
 
