@@ -47,64 +47,68 @@ public class Test
 //		oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = Obj3.funReturnStaticObj2();
 
 		Obj6 oTemp6 = new Obj6();
-		oTemp6 = (Obj6) oTemp5;
+		oTemp6 = (Obj6) oTemp5; ////86
 		
 		
-		try
-		{
-			oTemp6 = new Obj6();
-			oTemp6.funObj6();
-			oTemp6 = new Obj6();
-			oTemp6.funObj5();
-		}
-		catch(Exception e)
-		{
-			e.printStackTrace();
-		}
-		
-		Obj4 oTemp7 = oTemp6.funReturnObj4();
-		
-		
-//		Not considering chain assignments
+//		try
+//		{
+//			oTemp6 = new Obj6();
+//			oTemp6.funObj6();
+//			oTemp6 = new Obj6();
+//			oTemp6.funObj5();
+//		}
+//		catch(Exception e)
+//		{
+//			e.printStackTrace();
+//		}
+//		
+//		Obj4 oTemp7 = oTemp6.funReturnObj4();
+//		
+//		
+////		Not considering chain assignments
 //		oTemp5.objectOfObj4.objectOfObj3 = oTemp4.objectOfObj3 = oTemp3;
 		
-		// oTemp5.objectOfObj4 = oTemp6.objectOfObj4;
-		// oTemp5.objectOfObj4.objectOfObj3 = oTemp3;
-		// oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = new Obj2();
-
-		// Obj2 oTemp7 = oTemp3.funReturnObj2();
-
-		// oTemp7 = oTemp4.objectOfObj3.funReturnObj2();
-
-		// oTemp7 = oTemp5.objectOfObj4.objectOfObj3.funReturnObj2();
-
-		// oTemp6.objectOfObj4 = oTemp5.funReturnObj4();
-
-		// oTemp4.objectOfObj3 = oTemp5.objectOfObj4.funReturnObj3();
-
-		// oTemp4.objectOfObj3.objectOfObj2 = oTemp3.funReturnObj2();
-
-		// oTemp4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.funReturnObj2();		
-
-		// oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp5.objectOfObj4.objectOfObj3.funReturnObj2();
-
-
-
-		// oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.funReturnObj2();
-
-		// oTemp2 = oTemp4.objectOfObj3.objectOfObj2;
-
-		// oTemp2 = oTemp6.objectOfObj4.objectOfObj3.objectOfObj2;
-
-		// oTemp2.funObj2();
-
-		// oTemp3.objectOfObj2 = oTemp4.objectOfObj3.objectOfObj2;
-
-		// oTemp6.objectOfObj4.objectOfObj3 = oTemp4.objectOfObj3;
-
-		// oTemp6.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.objectOfObj2;
+//		 oTemp5.objectOfObj4 = oTemp6.objectOfObj4;
+//		 oTemp5.objectOfObj4.objectOfObj3 = oTemp3;
+//		 oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = new Obj2();
+//
+//		 Obj2 oTemp7 = oTemp3.funReturnObj2();////131
+//
+//		 oTemp7 = oTemp4.objectOfObj3.funReturnObj2();
+//
+//		 oTemp7 = oTemp5.objectOfObj4.objectOfObj3.funReturnObj2();
+//
+//		 oTemp6.objectOfObj4 = oTemp5.funReturnObj4();
+//
+//		 oTemp4.objectOfObj3 = oTemp5.objectOfObj4.funReturnObj3();
+//
+//		 oTemp4.objectOfObj3.objectOfObj2 = oTemp3.funReturnObj2();
+//
+//		 oTemp4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.funReturnObj2();		
+//
+//		 oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp5.objectOfObj4.objectOfObj3.funReturnObj2();
 
 
+
+		 oTemp5.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.funReturnObj2();
+
+		 oTemp2 = oTemp4.objectOfObj3.objectOfObj2;
+
+		 //oTemp2 = oTemp6.objectOfObj4.objectOfObj3.objectOfObj2;
+
+		 oTemp2.funObj2();
+
+		 oTemp3.objectOfObj2 = oTemp4.objectOfObj3.objectOfObj2;
+
+		 oTemp6.objectOfObj4.objectOfObj3 = oTemp4.objectOfObj3;
+
+		 oTemp6.objectOfObj4.objectOfObj3.objectOfObj2 = oTemp4.objectOfObj3.objectOfObj2;
+
+
+		 if((oTemp5.objectOfObj4 = oTemp6.objectOfObj4)==(oTemp4 = oTemp5.objectOfObj4))
+		 {
+			 System.out.println("Done");
+		 }
 		//------------------------------------------------------------------------------------------------------
 
 		//Test tObj = new Test(); // This is object @04

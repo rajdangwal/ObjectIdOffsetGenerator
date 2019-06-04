@@ -1,0 +1,39 @@
+class Child extends Base
+{
+    ObjectClass obj2;
+
+    public void <init>(ObjectClass)
+    {
+        Child this;
+        ObjectClass obj2;
+
+        this := @this: Child;
+
+        obj2 := @parameter0: ObjectClass;
+
+        specialinvoke this.<Base: void <init>()>();
+
+        this.<Child: ObjectClass obj2> = obj2;
+
+        return;
+    }
+
+    public void funChild()
+    {
+        Child this;
+        ObjectClass $r0;
+        java.io.PrintStream $r1;
+
+        this := @this: Child;
+
+        $r0 = this.<Child: ObjectClass obj2>;
+
+        $r0.<ObjectClass: java.lang.String str> = "ObjectClass object in Child";
+
+        $r1 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r1.<java.io.PrintStream: void println(java.lang.String)>("funChild called.");
+
+        return;
+    }
+}

@@ -1,0 +1,32 @@
+class ArrayContainer extends java.lang.Object
+{
+    ObjClass[] objArr3;
+
+    public void <init>(ObjClass[])
+    {
+        ArrayContainer this;
+        ObjClass[] objArr;
+
+        this := @this: ArrayContainer;
+
+        objArr := @parameter0: ObjClass[];
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<ArrayContainer: ObjClass[] objArr3> = objArr;
+
+        return;
+    }
+
+    public ObjClass[] funReturnObjArr()
+    {
+        ArrayContainer this;
+        ObjClass[] $r0;
+
+        this := @this: ArrayContainer;
+
+        $r0 = this.<ArrayContainer: ObjClass[] objArr3>;
+
+        return $r0;
+    }
+}

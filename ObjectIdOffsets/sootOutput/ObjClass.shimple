@@ -1,0 +1,29 @@
+class ObjClass extends java.lang.Object
+{
+    java.lang.String s;
+
+    void <init>()
+    {
+        ObjClass this;
+
+        this := @this: ObjClass;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void fun()
+    {
+        ObjClass this;
+        java.io.PrintStream $r0;
+
+        this := @this: ObjClass;
+
+        $r0 = <java.lang.System: java.io.PrintStream out>;
+
+        virtualinvoke $r0.<java.io.PrintStream: void println(java.lang.String)>("Fun called.");
+
+        return;
+    }
+}

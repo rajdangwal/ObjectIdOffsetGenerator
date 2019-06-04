@@ -1,0 +1,132 @@
+class Base extends java.lang.Object
+{
+    ObjectClass obj;
+    int i;
+    java.lang.String s;
+    ObjectClass[] objArr;
+    int[] iArr;
+
+    void <init>()
+    {
+        Base this;
+
+        this := @this: Base;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public void funBase()
+    {
+        Base this;
+        ObjectClass objLocal, $r0, $r1, $r6, $r0_1, $r6_1;
+        java.lang.Exception e, $r10;
+        java.lang.String $r2, $r2_1;
+        ObjectClass[] $r3, $r5, $r7, $r5_1;
+        int[] $r4, $r8, $r9, $r8_1, $r8_2, $r9_1;
+        int $i0, $i0_1;
+        java.io.PrintStream $r11;
+        java.lang.StringBuilder $r12, $r12_1;
+
+        this := @this: Base;
+
+        $r0 = new ObjectClass;
+
+        specialinvoke $r0.<ObjectClass: void <init>()>();
+
+        objLocal = $r0;
+
+        objLocal.<ObjectClass: java.lang.String str> = "ObjectClass object local to Base.funBase()";
+
+        $r1 = new ObjectClass;
+
+        specialinvoke $r1.<ObjectClass: void <init>()>();
+
+        this.<Base: ObjectClass obj> = $r1;
+
+        $r0_1 = this.<Base: ObjectClass obj>;
+
+        $r0_1.<ObjectClass: java.lang.String str> = "First Object of ObjectClass";
+
+        this.<Base: int i> = 10;
+
+        $r2 = new java.lang.String;
+
+        specialinvoke $r2.<java.lang.String: void <init>(java.lang.String)>("Rajendra");
+
+        this.<Base: java.lang.String s> = $r2;
+
+        $r3 = newarray (ObjectClass)[2];
+
+        this.<Base: ObjectClass[] objArr> = $r3;
+
+        $r4 = newarray (int)[2];
+
+        this.<Base: int[] iArr> = $r4;
+
+        $r5 = this.<Base: ObjectClass[] objArr>;
+
+        $r6 = this.<Base: ObjectClass obj>;
+
+        $r5[0] = $r6;
+
+        $r5_1 = this.<Base: ObjectClass[] objArr>;
+
+        $r7 = this.<Base: ObjectClass[] objArr>;
+
+        $r6_1 = $r7[0];
+
+        $r5_1[1] = $r6_1;
+
+        $r8 = this.<Base: int[] iArr>;
+
+        $r8[0] = 0;
+
+        $r8_1 = this.<Base: int[] iArr>;
+
+        $r8_1[1] = 1;
+
+        $r8_2 = this.<Base: int[] iArr>;
+
+        $r9 = this.<Base: int[] iArr>;
+
+        $i0 = $r9[1];
+
+        $r8_2[0] = $i0;
+
+     label1:
+        this.<Base: ObjectClass obj> = objLocal;
+
+     label2:
+        goto label4;
+
+     label3:
+        $r10 := @caughtexception;
+
+        e = $r10;
+
+        virtualinvoke e.<java.lang.Exception: void printStackTrace()>();
+
+     label4:
+        $r11 = <java.lang.System: java.io.PrintStream out>;
+
+        $r12 = new java.lang.StringBuilder;
+
+        specialinvoke $r12.<java.lang.StringBuilder: void <init>(java.lang.String)>("funBase called. value of iArr[0] = ");
+
+        $r9_1 = this.<Base: int[] iArr>;
+
+        $i0_1 = $r9_1[0];
+
+        $r12_1 = virtualinvoke $r12.<java.lang.StringBuilder: java.lang.StringBuilder append(int)>($i0_1);
+
+        $r2_1 = virtualinvoke $r12_1.<java.lang.StringBuilder: java.lang.String toString()>();
+
+        virtualinvoke $r11.<java.io.PrintStream: void println(java.lang.String)>($r2_1);
+
+        return;
+
+        catch java.lang.Exception from label1 to label2 with label3;
+    }
+}

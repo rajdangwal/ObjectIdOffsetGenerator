@@ -1,0 +1,20 @@
+class ArrayContainerContainer extends java.lang.Object
+{
+    ArrayContainer AC;
+
+    public void <init>(ArrayContainer)
+    {
+        ArrayContainerContainer this;
+        ArrayContainer AC;
+
+        this := @this: ArrayContainerContainer;
+
+        AC := @parameter0: ArrayContainer;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        this.<ArrayContainerContainer: ArrayContainer AC> = AC;
+
+        return;
+    }
+}

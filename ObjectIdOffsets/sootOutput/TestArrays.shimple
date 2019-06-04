@@ -1,0 +1,201 @@
+public class TestArrays extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        TestArrays this;
+
+        this := @this: TestArrays;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static ObjClass[] funReturnObjArr()
+    {
+        ObjClass[] $r0;
+
+        $r0 = newarray (ObjClass)[10];
+
+        return $r0;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        int[] intArr2, intArr, intArr_1;
+        ObjClass[][] objArr3D;
+        ObjClass[] objArr3, objArr, objArr2, $r1, $r3, objArr_1, objArr2_1, objArr_2, $r3_1, $r3_2, $r3_3;
+        ArrayContainer AC, AC2, $r2, $r5, $r2_1, $r2_2, $r2_3, $r5_1, $r2_4, $r5_2;
+        ArrayContainerContainer ACC, ACC2, $r4, $r4_1;
+        int i, j, i_1, i_2, i_3, i_4, i_5, i_6, i_7, j_1, j_2, j_3, i_8;
+        ObjClass $r0, $r0_1, $r0_2, $r0_3, $r0_4, $r0_5, $r0_6;
+
+        args := @parameter0: java.lang.String[];
+
+        intArr = newarray (int)[10];
+
+        intArr2 = newarray (int)[20];
+
+        objArr = newarray (ObjClass)[10];
+
+        objArr2 = newarray (ObjClass)[20];
+
+        objArr3D = newmultiarray (ObjClass)[10][10];
+
+        i = 0;
+
+(0)     goto label2;
+
+     label1:
+        intArr[i_1] = i_1;
+
+        $r0_1 = new ObjClass;
+
+        specialinvoke $r0_1.<ObjClass: void <init>()>();
+
+        objArr[i_1] = $r0_1;
+
+(1)     i_2 = i_1 + 1;
+
+     label2:
+        i_1 = Phi(i #0, i_2 #1);
+
+        $r0 = Phi($r0 #0, $r0_1 #1);
+
+        if i_1 < 10 goto label1;
+
+        i_3 = 0;
+
+(2)     goto label4;
+
+     label3:
+        intArr2[i_4] = i_4;
+
+        $r0_3 = new ObjClass;
+
+        specialinvoke $r0_3.<ObjClass: void <init>()>();
+
+        objArr2[i_4] = $r0_3;
+
+(3)     i_5 = i_4 + 1;
+
+     label4:
+        i_4 = Phi(i_3 #2, i_5 #3);
+
+        $r0_2 = Phi($r0 #2, $r0_3 #3);
+
+        if i_4 < 20 goto label3;
+
+        i_6 = 0;
+
+(4)     goto label8;
+
+     label5:
+        j_1 = 0;
+
+(5)     goto label7;
+
+     label6:
+        $r1 = objArr3D[i_7];
+
+        $r0_6 = new ObjClass;
+
+        specialinvoke $r0_6.<ObjClass: void <init>()>();
+
+        $r1[j_2] = $r0_6;
+
+(6)     j_3 = j_2 + 1;
+
+     label7:
+        $r0_5 = Phi($r0_4 #5, $r0_6 #6);
+
+        j_2 = Phi(j_1 #5, j_3 #6);
+
+        if j_2 < 10 goto label6;
+
+(7)     i_8 = i_7 + 1;
+
+     label8:
+        i_7 = Phi(i_6 #4, i_8 #7);
+
+        $r0_4 = Phi($r0_2 #4, $r0_5 #7);
+
+        j = Phi(j #4, j_2 #7);
+
+        if i_7 < 10 goto label5;
+
+        objArr_1 = objArr2;
+
+        intArr_1 = intArr2;
+
+        objArr3 = newarray (ObjClass)[30];
+
+        $r2 = new ArrayContainer;
+
+        specialinvoke $r2.<ArrayContainer: void <init>(ObjClass[])>(objArr3);
+
+        AC = $r2;
+
+        objArr2_1 = AC.<ArrayContainer: ObjClass[] objArr3>;
+
+        AC.<ArrayContainer: ObjClass[] objArr3> = objArr_1;
+
+        $r2_1 = new ArrayContainer;
+
+        specialinvoke $r2_1.<ArrayContainer: void <init>(ObjClass[])>(objArr2_1);
+
+        AC2 = $r2_1;
+
+        $r3 = AC.<ArrayContainer: ObjClass[] objArr3>;
+
+        AC2.<ArrayContainer: ObjClass[] objArr3> = $r3;
+
+        $r4 = new ArrayContainerContainer;
+
+        specialinvoke $r4.<ArrayContainerContainer: void <init>(ArrayContainer)>(AC2);
+
+        ACC = $r4;
+
+        $r2_2 = ACC.<ArrayContainerContainer: ArrayContainer AC>;
+
+        objArr_2 = $r2_2.<ArrayContainer: ObjClass[] objArr3>;
+
+        $r5 = ACC.<ArrayContainerContainer: ArrayContainer AC>;
+
+        $r3_1 = $r5.<ArrayContainer: ObjClass[] objArr3>;
+
+        AC.<ArrayContainer: ObjClass[] objArr3> = $r3_1;
+
+        $r4_1 = new ArrayContainerContainer;
+
+        specialinvoke $r4_1.<ArrayContainerContainer: void <init>(ArrayContainer)>(AC);
+
+        ACC2 = $r4_1;
+
+        $r2_3 = ACC2.<ArrayContainerContainer: ArrayContainer AC>;
+
+        $r5_1 = ACC.<ArrayContainerContainer: ArrayContainer AC>;
+
+        $r3_2 = $r5_1.<ArrayContainer: ObjClass[] objArr3>;
+
+        $r2_3.<ArrayContainer: ObjClass[] objArr3> = $r3_2;
+
+        staticinvoke <TestArrays: ObjClass[] funReturnObjArr()>();
+
+        virtualinvoke AC.<ArrayContainer: ObjClass[] funReturnObjArr()>();
+
+        $r2_4 = ACC.<ArrayContainerContainer: ArrayContainer AC>;
+
+        virtualinvoke $r2_4.<ArrayContainer: ObjClass[] funReturnObjArr()>();
+
+        $r5_2 = ACC2.<ArrayContainerContainer: ArrayContainer AC>;
+
+        $r3_3 = virtualinvoke $r5_2.<ArrayContainer: ObjClass[] funReturnObjArr()>();
+
+        AC.<ArrayContainer: ObjClass[] objArr3> = $r3_3;
+
+        return;
+    }
+}

@@ -1,0 +1,15 @@
+class ObjectClass extends java.lang.Object
+{
+    java.lang.String str;
+
+    void <init>()
+    {
+        ObjectClass this;
+
+        this := @this: ObjectClass;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+}

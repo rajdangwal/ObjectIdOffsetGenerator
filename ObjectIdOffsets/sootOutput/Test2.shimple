@@ -1,0 +1,50 @@
+public class Test2 extends java.lang.Object
+{
+
+    public void <init>()
+    {
+        Test2 this;
+
+        this := @this: Test2;
+
+        specialinvoke this.<java.lang.Object: void <init>()>();
+
+        return;
+    }
+
+    public static void main(java.lang.String[])
+    {
+        java.lang.String[] args;
+        ObjectClass obj1, $r0;
+        Child objChild, $r1, objBase_1;
+        Base $r2, objBase;
+
+        args := @parameter0: java.lang.String[];
+
+        $r0 = new ObjectClass;
+
+        specialinvoke $r0.<ObjectClass: void <init>()>();
+
+        obj1 = $r0;
+
+        $r1 = new Child;
+
+        specialinvoke $r1.<Child: void <init>(ObjectClass)>(obj1);
+
+        objChild = $r1;
+
+        virtualinvoke objChild.<Child: void funBase()>();
+
+        $r2 = new Base;
+
+        specialinvoke $r2.<Base: void <init>()>();
+
+        objBase = $r2;
+
+        virtualinvoke objBase.<Base: void funBase()>();
+
+        objBase_1 = objChild;
+
+        return;
+    }
+}
